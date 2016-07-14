@@ -33,11 +33,11 @@ and open the template in the editor.
 		<div data-role="content">
 			<button onclick="window.location.href='#createpage'"
 				style="width: 100%">Создать</button>
-
-			<select id="s1" style="width: 100%" size="1">
-				<option value="op1">OP1</option>
+			<div>Колоды</div>
+			<select id="s1" style="width: 100%" size="1" >
+				<!-- <option value="op1">OP1</option> -->
 			</select>
-			<button onclick="window.location.href='#selectbase';selectDeck();"
+			<button onclick="window.location.href='#selectbase';selectDeck();editCOuntNewCard();"
 				style="width: 100%">Выбрать</button>
 
 			<button onclick="refreshSelectDeck();" style="width: 100%">Обновить</button>
@@ -50,12 +50,12 @@ and open the template in the editor.
 		<div data-role="content">
 			<div>Создать</div>
 			<p>Название калоды</p>
-			<input id="createpage-kol-name" type="text" value="калода №">
+			<input id="createpage-kol-name" type="text" value="колода №">
 			<!-- <p>Вопрос</p>
 			<input id="createpage-question" type="text" value="">
 			<p>Ответ</p>
 			<input id="createpage-answer" type="text" value="">-->
-			<button onclick="add_deck();" style="width: 100%">добавить</button>
+			<button onclick="add_deck();refreshSelectDeck();" style="width: 100%">добавить</button>
 			<ul data-role="listview" data-inset="true" data-theme="a">
 				<li><a href="#deckProperty">Настроить колоду</a></li>
 				<li><a href="#start-menu">Home</a></li>
@@ -103,13 +103,13 @@ and open the template in the editor.
 				Новых карточек в колоде<input type="text" id="text1ofDeckProperty">
 			</div>
 			<div>
-				<input type="button" onclick="window.location.href='#editDeck'"
+				<input type="button" onclick="window.location.href='#editDeck';editCOuntNewCard();"
 					value="редактировать колоду" id="buttonEditDeck">
+				<input type="button" onclick="window.location.href='#selectbase';editCOuntNewCard();"
+					value="назад" id="buttonBackOfdeckProperty">
 			</div>
 
-			<ul data-role="listview" data-inset="true" data-theme="a">
-				<li><a href="#selectbase">назад</a></li>
-			</ul>
+			
 
 		</div>
 	</div>
