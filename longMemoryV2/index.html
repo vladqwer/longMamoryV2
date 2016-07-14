@@ -31,14 +31,14 @@ and open the template in the editor.
 			<h1>LongMemory</h1>
 		</div>
 		<div data-role="content">
-			<button onclick="window.location.href='#createpage'"
-				style="width: 100%">Создать</button>
 			<div>Колоды</div>
-			<select id="s1" style="width: 100%" size="1" >
+			<select id="s1" style="width: 100%" size="1">
 				<!-- <option value="op1">OP1</option> -->
 			</select>
-			<button onclick="window.location.href='#selectbase';selectDeck();editCOuntNewCard();"
+			<button onclick="window.location.href='#selectbase';selectDeck();createStudyDeck();editCOuntNewCard()"
 				style="width: 100%">Выбрать</button>
+				<button onclick="window.location.href='#createpage'"
+				style="width: 100%">Создать</button>
 
 			<button onclick="refreshSelectDeck();" style="width: 100%">Обновить</button>
 			<!-- <button onclick="selectDeck();" style="width: 100%">111</button> -->
@@ -72,14 +72,15 @@ and open the template in the editor.
 
 		<div data-role="content">
 			<div>
-				Новые<input type="text" id="text1ofSelectBase">
+				Новые<div id="text1ofSelectBase">qwe</div>
 			</div>
 			<div>
-				Повторение<input type="text" id="text2ofSelectBase">
+				Повторение<div id="text2ofSelectBase">qwe</div>
 			</div>
 			<div>
-				<input type="button" onclick="" value="начать"
-					id="buttonBeginOofSelectBase">
+				<input type="button"
+					onclick="window.location.href='#learnPage';createStudyDeck();"
+					value="начать" id="buttonBeginOofSelectBase">
 			</div>
 			<div>
 				<input type="button" onclick="window.location.href='#deckProperty '"
@@ -100,16 +101,18 @@ and open the template in the editor.
 
 		<div data-role="content">
 			<div>
-				Новых карточек в колоде<input type="text" id="text1ofDeckProperty">
+				Новых карточек в колоде<input type="text" id="text1ofDeckProperty" value="3">
 			</div>
 			<div>
-				<input type="button" onclick="window.location.href='#editDeck';editCOuntNewCard();"
-					value="редактировать колоду" id="buttonEditDeck">
-				<input type="button" onclick="window.location.href='#selectbase';editCOuntNewCard();"
+				<input type="button"
+					onclick="window.location.href='#editDeck';"
+					value="редактировать колоду" id="buttonEditDeck"> <input
+					type="button"
+					onclick="window.location.href='#selectbase';editCOuntNewCard();"
 					value="назад" id="buttonBackOfdeckProperty">
 			</div>
 
-			
+
 
 		</div>
 	</div>
@@ -122,7 +125,7 @@ and open the template in the editor.
 			<table id="tableOfEditDeck">
 
 			</table>
-			<div data-role="footer" data-theme="a">
+			<div data-role="footer" data-position="fixed" data-theme="a">
 				<input type="button" onclick="window.location.href='#addCard'"
 					value="добавить карточку" id="buttonPropertyOfSelectBase">
 				<input type="button" onclick="refreshOnEditDeck();" value="обновить"
@@ -149,6 +152,39 @@ and open the template in the editor.
 			<ul data-role="listview" data-inset="true" data-theme="a">
 				<li><a href="#editDeck">назад</a></li>
 			</ul>
+		</div>
+
+	</div>
+	<!-- страница обучение-->
+	<div data-role="page" id="learnPage" data-theme="a">
+		<div data-role="header">
+			<h1>Добавить</h1>
+		</div>
+		<div data-role="content">
+			<div>Вопрос</div>
+			<!-- <input type="text" id="questionOfLearnPage" value="поле вопроса"> -->
+			<div id="questionOfLearnPage">поле вопроса</div>
+			<div>Ответ</div>
+			<!-- <input type="text" id="answerOfLearnPage" value="поле вопроса"> -->
+			<div id="answerOfLearnPage" style="visibility:hidden">поле ОТВЕТА</div>
+			
+			<div data-role="footer" data-position="fixed" style="height: 40%" data-theme="a">
+				 <input type="button" onclick="studyUpdateB1();showAnswer2();" value="помню" 
+				 	id="buttonMem1" style="width: 100%">
+				 <input type="button" onclick="studyUpdateB2();showAnswer2();" value="плохо помню"
+					id="buttonMem2" style="width: 100%"> 
+				<input type="button" onclick="studyUpdateB3();showAnswer2();" value="не помню" 
+					id="buttonMem3" style="width: 100%">
+				<input type="button" onclick="showAnswer();" value="показать ответ"
+					id="showAns" style="width: 100%"> 
+				<input type="button" onclick="studyUpdate();" value="начать"
+					id="buttonBegin" style="width: 100%"> 
+				<input type="button" onclick="window.location.href='#start-menu'"
+					value="закончить" id="buttonMemEnd" style="width: 100%">
+			</div>
+			<!-- <ul data-role="listview" data-inset="true" data-theme="a">
+				<li><a href="#editDeck">назад</a></li>
+			</ul> -->
 		</div>
 
 	</div>
